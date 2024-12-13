@@ -1,0 +1,391 @@
+body {
+    font-family: 'League Spartan', sans-serif;
+    margin: 4px 4px;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+header {
+    color: #000000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Memberikan jarak antara title dan ikon */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-right nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.header-right nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right nav ul li a:hover {
+    color: #FFF;
+}
+
+
+.icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Menjaga proporsi ikon */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h1 .highlight {
+    color: #FFC107;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center; /* Pusat secara vertikal */
+    align-items: center; /* Pusat secara horizontal */
+    height: 100%; /* Pastikan tinggi sesuai */
+    text-align: center; /* Pusatkan teks */
+}
+
+/* Styling umum untuk welcome message dan sub message */
+main .welcome-text, main .sub-message {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #333333; /* Garis untuk efek cursor */
+    animation: typingRight 4s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+/* Welcome message animasi typing dari kanan */
+main .welcome-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    width: 0; /* Mulai dengan lebar 0 */
+    animation: typingRight 3s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+/* Sub message animasi typing dari kiri */
+main .sub-message {
+    font-size: 18px;
+    font-weight: normal;
+    color: #A9A9A9;  /* Warna teks abu-abu gelap */
+    margin-top: 10px;
+    width: 0; /* Mulai dengan lebar 0 */
+    animation: typingLeft 3s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+/* Animasi typing untuk welcome message (dari kanan) */
+@keyframes typingRight {
+    from {
+        width: 0; /* Mulai dari 0 */
+    }
+    to {
+        width: 21ch; /* Penuh */
+        border-right: none; /* Kursor hilang di akhir */
+    }
+}
+
+@keyframes typingLeft {
+    from {
+        width: 0; /* Mulai dari 0 */
+    }
+    to {
+        width: 28ch; /* Penuh */
+        border-right: none; /* Kursor hilang di akhir */
+    }
+}
+
+/* Animasi berkedip pada cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Menyembunyikan border pada setengah waktu */
+    }
+}
+
+
+/* Tata letak grid */
+.image-grid {
+    position: relative;
+    top: 100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 3 kolom */
+    gap: 20px; /* Jarak antar kotak */
+    padding: 20px;
+    justify-content: center;
+}
+
+.grid-box {
+    background-color: #FFDAB9; /* Pastel peach */
+    color: #2F2F2F; /* Abu-abu gelap */
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 320px; /* Tinggi grid box */
+    width: 240px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0; /* Awalnya transparan */
+    animation: fadeMove 7s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: cover;
+}
+
+.grid-box p {
+    position: relative;
+    z-index: 1;
+}
+
+.grid-box:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ID Spesifik untuk masing-masing grid box */
+#grid-box1 {
+    background-color: #FFC1CC; /* Warna khusus untuk grid-box1 */
+    position: relative;
+    margin-top: -20px;
+    animation-delay: 0.2s;
+}
+
+#grid-box2 {
+    background-color: #FFD700; /* Warna khusus untuk grid-box2 */
+    position: relative;
+    margin-top: 25px;
+    animation-delay: 0.4s;
+}
+
+#grid-box3 {
+    background-color: #AEC6CF; /* Warna khusus untuk grid-box3 */
+    position: relative;
+    margin-top: -20px;
+    animation-delay: 0.6s;
+}
+
+#grid-box4 {
+    background-color: #BFFCC6; /* Warna khusus untuk grid-box4 */
+    position: relative;
+    margin-top: 25px;
+    animation-delay: 0.8s;
+}
+
+#grid-box5 {
+    background-color: #E6E6FA; /* Warna khusus untuk grid-box5 */
+    position: relative;
+    margin-top: -20px;
+    animation-delay: 0.10s;
+}
+
+#grid-box6 {
+    background-color: #FFC1CC; /* Warna khusus untuk grid-box1 */
+    position: relative;
+    margin-top: -20px;
+}
+
+#grid-box7 {
+    background-color: #FFD700; /* Warna khusus untuk grid-box2 */
+    position: relative;
+    margin-top: 25px;
+}
+
+#grid-box8 {
+    background-color: #AEC6CF; /* Warna khusus untuk grid-box3 */
+    position: relative;
+    margin-top: -20px;
+}
+
+#grid-box9 {
+    background-color: #BFFCC6; /* Warna khusus untuk grid-box4 */
+    position: relative;
+    margin-top: 25px;
+}
+
+#grid-box10 {
+    background-color: #E6E6FA; /* Warna khusus untuk grid-box5 */
+    position: relative;
+    margin-top: -20px;
+}
+
+
+/* Efek animasi fade in/out dan bergerak */
+@keyframes fadeMove {
+    0%, 100% {
+        transform: translateY(0); /* Posisi awal */
+        opacity: 0; /* Transparan */
+    }
+    50% {
+        transform: translateY(-10px); /* Gerakan ke atas */
+        opacity: 1; /* Tampil */
+    }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 kolom untuk layar sangat kecil */
+    }
+}
+
+.more-container {
+    position: relative;
+    text-align: center; /* Pusatkan tombol */
+    margin-top: 20px; /* Jarak antara gambar dan tombol */
+    top: 140px;
+}
+
+.more-button {
+    background-color: #FFC107; /* Warna latar belakang tombol */
+    color: black; /* Warna teks */
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px; /* Padding tombol */
+    border: none; /* Hapus border default */
+    border-radius: 5px; /* Sudut tombol melengkung */
+    cursor: pointer; /* Menampilkan pointer saat hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek hover untuk tombol */
+.more-button:hover {
+    background-color: #e0a800; /* Warna saat hover */
+    transform: scale(1.1);
+}
+
+
+.divider {
+    position: relative;
+    width: 90%; /* Lebar divider yang diinginkan */
+    height: 240px; /* Tinggi divider */
+    background-color: #FFC107; /* Warna abu-abu */
+    display: flex; /* Untuk memusatkan teks */
+    justify-content: center; /* Pusatkan teks secara horizontal */
+    align-items: center; /* Pusatkan teks secara vertikal */
+    margin: 150px auto; /* Margin auto untuk memusatkan secara horizontal */
+    top: 70px;
+    box-sizing: border-box; /* Sertakan padding dalam perhitungan */
+}
+
+.divider-text {
+    text-align: left; /* Pusatkan teks */
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    color: #333333;
+    background-color: #FFC107; /* Warna latar belakang */
+    padding: 20px; /* Spasi di sekitar teks */
+    margin: 20px 0; /* Jarak dari elemen lain */
+    border-radius: 10px; /* Sudut melengkung */
+    display: inline-block; /* Inline block untuk kontrol ukuran */
+    width: 80%; /* Lebar penuh */
+    box-sizing: border-box; /* Sertakan padding dalam perhitungan lebar */
+}
+
+/* Container untuk grid */
+.grid-container {
+    position: relative;
+    display: flex;
+    flex: 1;
+    width: 100%; /* Lebar penuh */
+    bottom: 30px /* Jarak antara divider dan grid */
+}
+
+/* Grid Kanal - Grid baru di bawah divider */
+.grid-kanal {
+    display: grid; /* Menggunakan grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 30px; /* Jarak antar item grid */
+    padding: 20px; /* Ruang di sekitar grid */
+    width: 100%; /* Pastikan grid tidak menyusut */
+    box-sizing: border-box; /* Sertakan padding dalam perhitungan */
+}
+
+/* Setiap item dalam grid */
+.grid-item {
+    width: 100%; /* Lebar penuh dalam grid */
+    height: 300px; /* Tinggi item */
+    background-color: #333333; /* Latar belakang grid-item */
+    border-radius: 10px; /* Sudut melengkung */
+    display: flex; /* Untuk memusatkan konten di dalam item */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Memastikan gambar tidak keluar */
+}
+
+/* Gambar dalam grid */
+.grid-item img {
+    width: 100%; /* Gambar memenuhi lebar item */
+    height: auto; /* Menjaga proporsi gambar */
+    object-fit: cover; /* Memastikan gambar sesuai dengan grid */
+}
+
+.more-container-2 {
+    position: relative;
+    text-align: center; /* Pusatkan tombol */
+    margin-top: 20px; /* Jarak antara gambar dan tombol */
+    top: 10px;
+    margin-bottom: 100px;
+}
+
+.more-button-2 {
+    background-color: #FFC107; /* Warna latar belakang tombol */
+    color: black; /* Warna teks */
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px; /* Padding tombol */
+    border: none; /* Hapus border default */
+    border-radius: 5px; /* Sudut tombol melengkung */
+    cursor: pointer; /* Menampilkan pointer saat hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek hover untuk tombol */
+.more-button-2:hover {
+    background-color: #e0a800; /* Warna saat hover */
+    transform: scale(1.1);
+}
